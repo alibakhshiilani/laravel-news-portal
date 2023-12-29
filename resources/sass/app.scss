@@ -1,0 +1,105 @@
+// Fonts
+@import 'fonts';
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+
+body {
+    font-family: $font-name,sans-serif;
+    font-size: 1rem;
+    background: #e2e1e0;
+}
+
+.figure {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: block;
+    overflow: hidden;
+    border-radius: 25px;
+    margin-left: 15px;
+    flex-grow: 0;     /* do not grow   - initial value: 0 */
+    flex-shrink: 0;   /* do not shrink - initial value: 1 */
+    flex-basis: 19em; /* width/height  - initial value: auto */
+    img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+
+.news-category-card {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.10), 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.news-category-headline {
+
+    a {
+        h2 {
+            font-size: 1rem;
+            line-height: 1.4rem;
+        }
+
+    }
+    p {
+        font-size: .8rem;
+    }
+}
+
+.cat-list {
+    padding: 1rem;
+    li {
+        list-style-type: none;
+        margin-bottom: .7rem;
+        position: relative;
+        padding-right: .7rem;
+        border-bottom: 1px solid lightgray;
+        .source-badge {
+            //background-color: gray;
+            //border-radius: 10px;
+            font-size: .6rem;
+            //padding: 3px;
+        }
+        a {
+            h2 {
+                font-size:.8rem !important;
+                //text-wrap: avoid;
+            }
+        }
+        &::before {
+            content: "";
+            position:absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: block;
+            width:0;
+            height: 0;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-right: 6px solid green;
+            transition: all .5s;
+        }
+
+        &:hover {
+            &::before {
+                right: 2px;
+            }
+        }
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.footer-area {
+    width: 100%;
+    background: #353C46;
+    padding: 5rem;
+}
